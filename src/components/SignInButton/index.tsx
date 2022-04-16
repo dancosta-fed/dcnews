@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 
 
 export const SignInButton = () => {
-  const isUserLoggedIn = true
+  const isUserLoggedIn = false
 
   return isUserLoggedIn ? (
     <button 
