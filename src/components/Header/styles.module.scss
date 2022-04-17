@@ -59,3 +59,23 @@
     margin-left: auto;
   }
 }
+
+.navContent {
+  display: contents;
+}
+
+@media (max-width: 435px) {
+  .headerContainer{
+    img {
+      display:none;
+    }
+
+    nav {
+      margin-left: 1rem;
+    }
+
+    & + a {
+      margin-left: 0;
+    }
+  }
+}

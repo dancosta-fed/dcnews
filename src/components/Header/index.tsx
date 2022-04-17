@@ -6,11 +6,13 @@ export const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="dc.news logo" />
-        <nav>
-          <a className={styles.active} href="">Home</a>
-          <a href="">Posts</a>
-        </nav>
-        <SignInButton />
+        
+          <nav>
+            <a className={styles.active} href="">Home</a>
+            <a href="">Posts</a>
+          </nav>
+          <SignInButton />
+
       </div>
     </header>
   )

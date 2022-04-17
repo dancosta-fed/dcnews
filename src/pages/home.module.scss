@@ -7,6 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    width: 350px;
+  }
 }
 
 .hero {
@@ -43,3 +47,34 @@
     margin-top: 2.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column;
+    padding: 0 10rem;
+  }
+
+  .hero {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width:375px) {
+ .contentContainer {
+  padding: 0 1rem;
+  img {
+   width: 300px;
+ }
+ }
+}
+
+@media (max-width:320px) {
+  .contentContainer {
+   padding: 0 1rem;
+   width: 100%;
+   img {
+     width: 200px;
+   }
+  }
+ }
+
