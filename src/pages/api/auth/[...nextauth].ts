@@ -7,7 +7,8 @@ export default NextAuth({
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
+      // clientId: process.env.GITHUB_ID, //localhost
+      clientId: process.env.GITHUB_ID_SECRETE_PRODUCTION, // production
       clientSecret: process.env.GITHUB_SECRET,
       authorization: {
         params: {
