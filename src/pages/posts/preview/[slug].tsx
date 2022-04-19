@@ -1,10 +1,12 @@
-import {  GetStaticProps } from "next"
-import { getSession } from "next-auth/react"
+import {  GetStaticPaths, GetStaticProps } from "next"
+import { getSession, useSession } from "next-auth/react"
 import { RichText } from "prismic-dom"
 import { getPrismicClient } from "../../../services/prismic"
 import Head  from 'next/head'
 import styles from "../post.module.scss"
 import Link from "next/link"
+import { useEffect } from "react"
+import { useRouter } from "next/router"
 
 interface PostPreviewProps {
   post:{
@@ -16,6 +18,16 @@ interface PostPreviewProps {
 }
 
 export default function PostPreview({ post }: PostPreviewProps ) {
+
+  const { data: session } = useSession()
+  const router = useRouter()
+
+  useEffect(() => {
+    if(session?.activeSubscription){
+      router.push(`/posts/${post.slug}`)
+    }
+  }, [session])
+
   return (
     <>
       <Head>
@@ -43,7 +55,9 @@ export default function PostPreview({ post }: PostPreviewProps ) {
   )
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Here I could chose which posts to generate the static path on the build
+
   return {
     paths: [],
     fallback: 'blocking'
@@ -52,10 +66,6 @@ export const getStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
-
-
-
-
 
   const prismic = getPrismicClient()
   
@@ -75,6 +85,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post,
-    }
+    },
+
+    redirect: 60 * 30, // 30 minutes to updated
   }
 }
