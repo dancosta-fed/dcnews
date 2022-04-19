@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import { SignInButton } from '../SignInButton'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { ActiveLink } from '../ActiveLink'
 
 export const Header = () => {
@@ -8,7 +8,7 @@ export const Header = () => {
   return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <Image src="/images/logo.svg" alt="dc.news logo" className="logo"/>
+        <img src="/images/logo.svg" alt="dc.news logo" className="logo"/>
         
           <nav>
 

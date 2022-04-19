@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
 
-  .boy-coding {
+  img {
     width: 350px;
   }
 }
@@ -62,7 +62,7 @@
 @media (max-width:375px) {
  .contentContainer {
   padding: 0 1rem;
-  .boy-coding {
+  img {
    width: 300px;
  }
  }
@@ -72,7 +72,7 @@
   .contentContainer {
    padding: 0 1rem;
    width: 100%;
-   .boy-coding {
+   img {
      width: 200px;
    }
   }
