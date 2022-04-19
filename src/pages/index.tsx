@@ -19,7 +19,8 @@ export default function Home({product}: HomeProps) {
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>👏🏾  Hey, welcome</span>
+          {/* Add a user name below? */}
+          <span>👏🏾  Hey, welcome</span> 
           <h1>A journey with <span>React</span> learning</h1>
           <p>
             Get access to all my publications <br />
