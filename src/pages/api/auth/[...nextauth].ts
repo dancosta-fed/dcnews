@@ -3,10 +3,9 @@ import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import { fauna } from "../../../services/fauna"
 
+
 export default NextAuth({
   // Configure one or more authentication providers
- 
-  secret: process.env.SIGNIN_KEY,
 
   providers: [
     GithubProvider({
@@ -20,6 +19,11 @@ export default NextAuth({
     }),
     // ...add more providers here
   ],
+
+  jwt: {
+    secret: process.env.SIGNIN_KEY,
+ },
+
   callbacks: {
     // checking if user has subscribed.
     async session({ session }) {
