@@ -8,7 +8,7 @@ export const Header = () => {
   return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <Image src="/images/logo.svg" alt="dc.news logo" />
+        <Image src="/images/logo.svg" alt="dc.news logo" className="logo"/>
         
           <nav>
 

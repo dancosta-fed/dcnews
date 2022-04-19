@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
 
-  img {
+  .logo {
     width: 110px;
   }
 
@@ -66,7 +66,7 @@
 
 @media (max-width: 435px) {
   .headerContainer{
-    img {
+    .logo {
       display:none;
     }
 
